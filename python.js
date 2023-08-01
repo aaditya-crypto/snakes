@@ -31,8 +31,9 @@ function update(){
     snakeA += speed2 * blocksize;
     context.fillRect(snakeI, snakeA,blocksize,blocksize);
 
-    context.fillStyle="red";
-    context.fillRect(foodx, foody, blocksize, blocksize);
+    context.fillstyle="red";
+    context.fillStyle(foodx, foody, blocksize, blocksize)
+
 }
 
 function placefood(){

@@ -15,10 +15,10 @@ window.onload = function() {
     board = document.getElementById("board");
     board.height = row * blocksize;
     board.width = column * blocksize;
-    context =board.getcontext("2d");
+    context =board.getContext("2d");
 
     placefood();
-    document.addeventlistner("keyup", changedirection);
+    document.addEventlistner("keyup", changedirection);
     update();
 
 }

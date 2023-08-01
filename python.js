@@ -25,7 +25,7 @@ window.onload = function() {
 
 function update(){
     context.fillstyle="green";
-    context.fillreact(0,0,board.width, board.height);
+    context.fillRect(0,0,board.width, board.height);
 
     context.fillstyle="yellow";
     snakeI += speed1 * blocksize;

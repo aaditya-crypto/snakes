@@ -1,4 +1,4 @@
-var blocksize = 25;
+var blocksize = 50;
 var row = 8;
 var column =8;
 var board;
@@ -15,32 +15,29 @@ window.onload = function() {
     board = document.getElementById("board");
     board.height = row * blocksize;
     board.width = column * blocksize;
-    context =board.getContext("2d");
+    context=board.getContext("2d");
 
     placefood();
-    document.addEventlistner("keyup", changedirection);
+    document.addEventListener("keyup", changedirection);
     update();
-
 }
 
 function update(){
-    context.fillstyle="green";
+    context.fillStyle="green";
     context.fillRect(0,0,board.width, board.height);
 
-    context.fillstyle="yellow";
+    context.fillStyle="yellow";
     snakeI += speed1 * blocksize;
     snakeA += speed2 * blocksize;
     context.fillRect(snakeI, snakeA,blocksize,blocksize);
 
-    context.fillstyle="red";
-    context.fillStyle(foodx, foody, blocksize, blocksize)
-
+    context.fillStyle="red";
+    context.fillRect(foodx, foody, blocksize, blocksize);
 }
 
 function placefood(){
     foodx = Math.floor(Math.random() * column)* blocksize;
     foody = Math.floor(Math.random() * row) * blocksize;
-
 }
 function changedirection(e){
     if(e.code == "ArrowUp"){

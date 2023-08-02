@@ -19,7 +19,7 @@ window.onload = function() {
 
     placefood();
     document.addEventListener("keyup", changedirection);
-    update();
+    update();   
 }
 
 function update(){
@@ -28,13 +28,16 @@ function update(){
 
     context.fillStyle="yellow";
     context.clear
-    snakeI += speed1 ;
-    snakeA += speed2 ;
+    snakeI += speed1*2;
+    snakeA += speed2*2 ;
     context.fillRect(snakeI, snakeA,25,25);
     requestAnimationFrame(update)
+    if(snakeI == foodx && snakeA == foody){
+        placefood();
+    }
 
     context.fillStyle="red";
-    context.fillRect(foodx, foody, 25, 25)
+    context.fillRect(foodx, foody,25,25);
 
 }
 

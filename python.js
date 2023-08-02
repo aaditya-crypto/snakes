@@ -27,9 +27,11 @@ function update(){
     context.fillRect(0,0,board.width, board.height);
 
     context.fillStyle="yellow";
-    snakeI += speed1 * blocksize;
-    snakeA += speed2 * blocksize;
+    context.clear
+    snakeI += speed1 ;
+    snakeA += speed2 ;
     context.fillRect(snakeI, snakeA,25,25);
+    requestAnimationFrame(update)
 
     context.fillStyle="red";
     context.fillRect(foodx, foody, 25, 25)
@@ -53,7 +55,7 @@ function changedirection(e){
         speed1 = -1;
         speed2 = 0;
     }
-    else if(e.code == "Arrowright"){
+    else if(e.code == "ArrowRight"){
         speed1 = 1;
         speed2 = 0;
     }
